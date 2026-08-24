@@ -19,12 +19,10 @@ To compare RTL simulation results with synthesized results.
 | Tool / Technology |Purpose |
 |---|---|
 | Verilog HDL |RTL Design |
-| Icarus Verilog | Compilation and
-Simulation |
+| Icarus Verilog | Compilation and Simulation |
 | GTKWave | Waveform Analysis |
 | Yosys | RTL Synthesis |
-| SKY130 Standard Cell Library |
-Technology Mapping |
+| SKY130 Standard Cell Library | Technology Mapping |
 | Linux Terminal | Command 
 Execution |
 | gVim | Verilog Editing |
