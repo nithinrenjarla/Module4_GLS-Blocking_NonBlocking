@@ -148,6 +148,34 @@ gtkwave blocking_caveat.vcd
 # ✅Observation
 The simulation demonstrated the sequential execution behaviour of blocking assignments
 
+# 7.Synthesis of Blocking Assignment Circuit
+
+# Overview
+The blocking assignment circuit was synthesized using Yosys to compare RTL simulation with the generated hardware. The synthesized circuit illustrates how the Verilog description is interpreted and mapped to the SKY130 standard-cell library.
+
+# Synthesis Commands
+```verilog
+yosys
+
+read_verilog blocking_caveat.v
+
+synth -top blocking_caveat
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+```
+# Technology-Mapped Circuit
+
+<img width="700"  alt="blocking caveat" src="https://github.com/user-attachments/assets/e0bda30d-37d3-44e2-9ef6-b1ff7481ee33" />
+
+# ✅Observation
+The synthesized hardware accurately represented the intended circuit implementation.
+
+
+
+
+
 
 
 
