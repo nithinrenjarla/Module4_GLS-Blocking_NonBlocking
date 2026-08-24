@@ -14,3 +14,17 @@ To verify circuit functionality using Icarus Verilog and GTKWave.
 To synthesize RTL designs using Yosys.
 To map synthesized circuits to the SKY130 standard-cell library.
 To compare RTL simulation results with synthesized results.
+
+# Tools and Technologies Used
+| Tool / Technology |Purpose |
+|---|---|
+| Verilog HDL |RTL Design |
+| Icarus Verilog | Compilation and
+Simulation |
+| GTKWave | Waveform Analysis |
+| Yosys | RTL Synthesis |
+| SKY130 Standard Cell Library |
+Technology Mapping |
+| Linux Terminal | Command 
+Execution |
+| gVim | Verilog Editing |
