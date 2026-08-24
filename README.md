@@ -23,6 +23,5 @@ To compare RTL simulation results with synthesized results.
 | GTKWave | Waveform Analysis |
 | Yosys | RTL Synthesis |
 | SKY130 Standard Cell Library | Technology Mapping |
-| Linux Terminal | Command 
-Execution |
+| Linux Terminal | Command Execution |
 | gVim | Verilog Editing |
