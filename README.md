@@ -25,3 +25,26 @@ To compare RTL simulation results with synthesized results.
 | SKY130 Standard Cell Library | Technology Mapping |
 | Linux Terminal | Command Execution |
 | gVim | Verilog Editing |
+
+# Table of Contents
+1. RTL Simulation of a 2×1 Multiplexer
+2. Technology Mapping of the Multiplexer
+3. Functional Verification Using Simulation Waveform
+4. Analysis of an Incorrect Multiplexer Design
+5. Verification of Bad Multiplexer Behavior
+6. Simulation of Blocking Assignment Behavior
+7. Synthesis of Blocking Assignment Circuit
+8. Blocking Assignment Using Previous Value
+9. Overall Result
+10. Conclusion
+
+# 1.RTL Simulation of a 2×1 Multiplexer
+# Overview
+A 2×1 multiplexer was implemented using the Verilog ternary operator to understand combinational logic design. The RTL design was simulated using Icarus Verilog, and the output waveform was verified using GTKWave. The experiment demonstrates how the output changes based on the select signal and validates the functional correctness of the multiplexer before synthesis.
+
+# Simulation Commands
+```verilog
+iverilog -o mux ternary_operator_mux.v tb_ternary_operator_mux.v
+
+gtkwave ternary_operator_mux.vcd
+```
