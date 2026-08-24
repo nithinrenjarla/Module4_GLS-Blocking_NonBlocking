@@ -50,7 +50,7 @@ gtkwave ternary_operator_mux.vcd
 ```
 <img width="700" alt="tb_ternary" src="https://github.com/user-attachments/assets/b24a5e29-48a1-46e4-8c57-230c6c943078" />
 
-# Observation
+# ✅Observation
 The RTL simulation confirmed the correct functionality of the 2×1 multiplexer
 
 # 2.Technology Mapping of the Multiplexer
@@ -73,7 +73,7 @@ show
 
  <img width="700"  alt="ternary show" src="https://github.com/user-attachments/assets/a6006a9f-08e3-4f15-b223-464b96c9fe35" />
 
- # Observation
+ # ✅Observation
 The multiplexer was successfully mapped to the SKY130 standard-cell library.
 
 # 3.Functional Verification Using Simulation Waveform
@@ -89,7 +89,7 @@ gtkwave mux_generate.vcd
 # Output Waveform
 <img width="700"  alt="ternary operator gtkwave" src="https://github.com/user-attachments/assets/4885f07b-81b8-4b18-a9d0-d7f45d98b01a" />
 
-# Observation
+# ✅Observation
 The waveform confirmed correct multiplexer operation for all input combinations
 
 # 4.Analysis of an Incorrect Multiplexer Design
@@ -105,6 +105,25 @@ gtkwave bad_mux.vcd
 # Output
 
 <img width="700"  alt="bad mux gtkwave" src="https://github.com/user-attachments/assets/3f82d09b-77a6-4e53-8782-9de230dc10ba" />
+
+# ✅Observation
+The incorrect coding style produced unexpected output behaviour during simulation
+
+# 5.Verification of Bad Multiplexer Behavior
+# Overview
+The waveform illustrates the behavior of the incorrectly implemented multiplexer. Missing assignments cause previous output values to be retained, resulting in latch inference and mismatch between simulation and synthesized hardware.
+
+# Simulation Commands
+```verilog
+iverilog -o bad_mux bad_mux.v tb_bad_mux.v
+
+gtkwave bad_mux.vcd
+```
+# Output Waveform
+
+<img width="700"  alt=" badmux gtkwave" src="https://github.com/user-attachments/assets/539bfe9a-103a-4027-aba4-696618f31443" />
+
+
 
 
 
