@@ -39,6 +39,7 @@ To compare RTL simulation results with synthesized results.
 10. Conclusion
 
 # 1.RTL Simulation of a 2×1 Multiplexer
+
 # Overview
 A 2×1 multiplexer was implemented using the Verilog ternary operator to understand combinational logic design. The RTL design was simulated using Icarus Verilog, and the output waveform was verified using GTKWave. The experiment demonstrates how the output changes based on the select signal and validates the functional correctness of the multiplexer before synthesis.
 
@@ -54,6 +55,7 @@ gtkwave ternary_operator_mux.vcd
 The RTL simulation confirmed the correct functionality of the 2×1 multiplexer
 
 # 2.Technology Mapping of the Multiplexer
+
 # Overview
 The multiplexer design was synthesized using Yosys and mapped to the SKY130 standard-cell library. During synthesis, the RTL description was optimized and converted into a technology-specific multiplexer cell, reducing hardware complexity while preserving functionality.
 
@@ -77,7 +79,8 @@ show
 The multiplexer was successfully mapped to the SKY130 standard-cell library.
 
 # 3.Functional Verification Using Simulation Waveform
-📖 Overview
+
+# Overview
 The simulation waveform verifies that the multiplexer output correctly follows the selected input. Different input combinations were applied to validate the functionality of the design under various conditions before synthesis.
 
 # Simulation Commands
@@ -93,6 +96,7 @@ gtkwave mux_generate.vcd
 The waveform confirmed correct multiplexer operation for all input combinations
 
 # 4.Analysis of an Incorrect Multiplexer Design
+
 # Overview
 This experiment demonstrates an improperly coded multiplexer that leads to synthesis-simulation mismatch. Incomplete assignments inside the always block may infer latches during synthesis, resulting in hardware behavior different from RTL simulation.
 
@@ -110,6 +114,7 @@ gtkwave bad_mux.vcd
 The incorrect coding style produced unexpected output behaviour during simulation
 
 # 5.Verification of Bad Multiplexer Behavior
+
 # Overview
 The waveform illustrates the behavior of the incorrectly implemented multiplexer. Missing assignments cause previous output values to be retained, resulting in latch inference and mismatch between simulation and synthesized hardware.
 
@@ -122,6 +127,30 @@ gtkwave bad_mux.vcd
 # Output Waveform
 
 <img width="700"  alt=" badmux gtkwave" src="https://github.com/user-attachments/assets/539bfe9a-103a-4027-aba4-696618f31443" />
+
+# ✅Observation
+The Waveform demonstrated synthesis-simulation mismatch caused by improper RTL coding.
+
+# 6.Simulation of Blocking Assignment Behavior
+
+# Overview
+Blocking assignments execute statements sequentially within an always block. This experiment illustrates their behavior during simulation and explains why they are mainly recommended for combinational logic. Incorrect usage in sequential circuits may produce unexpected results.
+
+# Simulation Commands
+```verilog
+iverilog -o blocking blocking_caveat.v tb_blocking_caveat.v
+
+gtkwave blocking_caveat.vcd
+```
+# Output Waveform
+<img width="700"  alt="blocking caveat gtk" src="https://github.com/user-attachments/assets/ea966d4b-f0ba-470f-8e1e-81e25b14bf17" />
+
+# ✅Observation
+The simulation demonstrated the sequential execution behaviour of blocking assignments
+
+
+
+
 
 
 
