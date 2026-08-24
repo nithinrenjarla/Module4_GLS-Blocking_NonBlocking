@@ -172,6 +172,36 @@ show
 # ✅Observation
 The synthesized hardware accurately represented the intended circuit implementation.
 
+# 8.Blocking Assignment Using Past Value
+
+This experiment demonstrates how blocking assignments (=) use the updated value immediately within the same procedural block. The simulation illustrates how the output depends on the sequence of statements and the previously assigned values. This helps in understanding the behavior of blocking assignments and why they can sometimes lead to unexpected results if used in sequential logic. Therefore, blocking assignments are generally recommended for combinational logic, while non-blocking assignments (<=) are preferred for sequential circuits.
+
+# Commands
+```verilog
+iverilog -o blocking_past blocking_caveat.v tb_blocking_caveat.v
+
+gtkwave blocking_caveat.vcd
+```
+# Output
+<img width="700"  alt="tb blocking caveat" src="https://github.com/user-attachments/assets/e23dd32e-fde5-4f82-a2f8-857c2b5ebcea" />
+
+# ✅Observation
+The waveform shows that blocking assignments execute sequentially and immediately update variable values within the same procedural block. This demonstrates how statement ordering influences simulation behavior and highlights the importance of using blocking assignments appropriately.
+
+# Overall Result
+
+The experiments successfully demonstrated the implementation of multiplexers, blocking assignments, and synthesis-simulation mismatch scenarios. RTL simulation, waveform analysis, and hardware synthesis verified the importance of writing synthesizable Verilog code. The generated circuits were successfully mapped to the SKY130 standard-cell library.
+
+# Conclusion
+This module provided a comprehensive understanding of blocking and non-blocking assignments, multiplexer implementation, and synthesis-simulation mismatch. Through simulation, synthesis, and technology mapping, the experiments emphasized the importance of proper RTL coding practices for generating reliable and optimized digital hardware. The complete RTL-to-GDS front-end flow using Icarus Verilog, GTKWave, Yosys, and SKY130 was successfully demonstrated.
+
+
+
+
+
+
+
+
 
 
 
